@@ -24,7 +24,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let scene = SCNScene(named: "art.scnassets/farmhouse_obj.scn")!
+        
+        let rootNode = scene.rootNode.childNode(withName: "default", recursively: true)!
+        
+        rootNode.position = SCNVector3(0, -2, -5)
+        rootNode.scale = SCNVector3(x: 0.05, y: 0.05, z: 0.05)
         
         // Set the scene to the view
         sceneView.scene = scene
